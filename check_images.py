@@ -4,8 +4,8 @@
 #
 # TODO 0: Add your information below for Programmer & Date Created.                                                                             
 # PROGRAMMER: VietTQ8
-# DATE CREATED:  2021-06-15
-# REVISED DATE: 2021-06-15
+# DATE CREATED:  2024-08-20
+# REVISED DATE: 2024-08-20
 # PURPOSE: Classifies pet images using a pretrained CNN model, compares these
 #          classifications to the true identity of the pets in the images, and
 #          summarizes how well the CNN performed on the image classification task. 
