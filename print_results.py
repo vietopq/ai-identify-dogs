@@ -78,7 +78,7 @@ def print_results(results_dic, results_stats_dic, model,
 
     # Prints summary statistics (percentages) on Model Run
     print(" ")
-    for key in results_stats_dic:
+    for key, value in results_stats_dic.items():
         # TODO: 6b. REPLACE pass with CODE that prints out all the percentages 
         #           in the results_stats_dic dictionary. Recall that all 
         #           percentages in results_stats_dic have 'keys' that start with 
@@ -86,14 +86,14 @@ def print_results(results_dic, results_stats_dic, model,
         #           statement that determines if the key starts with the letter
         #           'p' and then you want to use a print statement to print 
         #           both the key and the value. Remember the value is accessed 
-        #           by results_stats_dic[key]
+        #           by value
         #
         if key[0] == 'p':
             label_print = key.replace("pct_match", "Match Labels")
             label_print = label_print.replace("pct_correct_dogs", "Dogs Correct")
             label_print = label_print.replace("pct_correct_breed", "Breeds Correct")
             label_print = label_print.replace("pct_correct_notdogs", "Not-a-Dog Correct")
-            print("{:.1f}% {:20}".format(results_stats_dic[key], label_print.title()))
+            print("{:.1f}% {:20}".format(value, label_print.title()))
 
 
     # IF print_incorrect_dogs == True AND there were images incorrectly 
@@ -126,9 +126,11 @@ def print_results(results_dic, results_stats_dic, model,
             # Pet Image Label is a Dog - Classified as NOT-A-DOG -OR- 
             # Pet Image Label is NOT-a-Dog - Classified as a-DOG
             if sum(results_dic[key][3:]) == 1 and results_dic[key][4] == 1 :
-                print("Pet {} is a Dog - Classified as NOT-A-DOG".format(results_dic[key][0]))
+                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
+                                                          results_dic[key][1]))
             elif sum(results_dic[key][3:]) == 1 and results_dic[key][3] == 1 :
-                print("Pet{} is NOT-a-Dog - Classified as a-DOG".format(results_dic[key][0]))
+                print("Real: {:>26}   Classifier: {:>30}".format(results_dic[key][0],
+                                                          results_dic[key][1]))
 
     # IF print_incorrect_breed == True AND there were dogs whose breeds 
     # were incorrectly classified - print out these cases                    

@@ -328,7 +328,7 @@ N Not-Dog Images    :  10
 90.0% Not-A-Dog Correct   
 
 INCORRECT Dog/NOT Dog Assignments:
-Pet cat is a Dog - Classified as NOT-A-DOG
+Real:                        cat   Classifier:   norwegian elkhound, elkhound
 
 INCORRECT Dog Breed Assignment:
 Real:             great pyrenees   Classifier:                         kuvasz
